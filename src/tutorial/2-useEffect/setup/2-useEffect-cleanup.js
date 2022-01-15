@@ -6,10 +6,11 @@ import React, { useState, useEffect } from 'react'
 const UseEffectCleanup = () => {
   const [size, setSize] = useState(window.innerWidth)
 
+  // gets the size of browser windows width
   const checkSize = () => {
     setSize(window.innerWidth)
   }
-
+  // us
   useEffect(() => {
     console.log('useEffect')
     window.addEventListener('resize', checkSize)
