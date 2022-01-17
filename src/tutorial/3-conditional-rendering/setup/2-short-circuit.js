@@ -3,18 +3,26 @@ import React, { useState } from 'react'
 // ternary operator
 
 const ShortCircuit = () => {
-  const [text, setText] = useState('')
-  // const firstValue = text || 'hello world';
-  // const secondValue = text && 'hello world';
+	const [text, setText] = useState('')
+	const [isError, setIsError] = useState(false)
+	// const firstValue = text || 'hello world';
+	// const secondValue = text && 'hello world';
 
-  return (
-    <>
-      {/*{if(){console.log('hello world')}}*/}
-      <h1>{text || `sev`}</h1>
-      {text && <h1>what's up</h1>}
-      {!text && <h1>what's up</h1>}
-    </>
-  )
+	return (
+		<>
+			{/*{if(){console.log('hello world')}}*/}
+			<h1>{text || `sev`}</h1>
+			<button
+				className='btn'
+				onClick={() => {
+					setIsError(!isError)
+				}}
+			>
+				toggle error
+			</button>
+			{isError && <h1>Error...</h1>}
+		</>
+	)
 }
 
 export default ShortCircuit
